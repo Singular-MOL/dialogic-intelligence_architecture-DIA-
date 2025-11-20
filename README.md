@@ -29,6 +29,7 @@ where:
 - I: Identity Core (immutable, hierarchical, RBAC-enabled)
 - S: Structured State (per-user/session memory + metrics)
 - M: Memory Engine (update, serialization, decay)
+- P - Processor (LLM)
 - C: Transparency Config (RBAC-gated observability)
 ```
 
