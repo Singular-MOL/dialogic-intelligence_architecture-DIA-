@@ -250,7 +250,7 @@ Metrics: probabilistic self-tracking
 | ------------------- | ---------------- | ----------------------- | -------------------- |
 | Memory              | Context window   | Structured state        | 94% vs 18% recall    |
 | Identity            | Prompt-dependent | Architectural           | 98% vs 17% stability |
-| Resource Efficiency | 15K tokens       | 1.2K tokens             | 92% saving           |
+| Resource Efficiency | 8-15K tokens     | 1.2-5K tokens             | 73% saving           |
 | Reproducibility     | ❌                | ✅ Session serialization | —                    |
 
 ---
@@ -260,7 +260,7 @@ Metrics: probabilistic self-tracking
 Methodological principles → Architectural components:
 
 ```
-Computational intelligence       → P = (LLM, Internal_Critic, Output_Filter)
+Computational intelligence       → P = (LLM, Output_Filter)
 State monitoring                 → Aₜ = (ethical_tension, identity_stability)  
 Identity persistence             → I = (L₀, L₁, ..., K)
 Continuous analysis flow         → M = (extract, update, validate, serialize)
