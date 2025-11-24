@@ -1,210 +1,215 @@
-Dialogic Intelligence Architecture (DIA)
 
-Engineering Structured Memory, Identity, and Ethical Consistency
+# Dialogic Intelligence Architecture (DIA)
+**Engineering Structured Memory, Identity, and Ethical Consistency**
 
-Abstract
+## Abstract
 
 This paper presents the Dialogic Intelligence Architecture (DIA) — a computational framework for dialog agents that exhibit:
 
-reproducible identity,
-
-structured long-term state storage,
-
-quantifiable ethical and operational metrics.
+- reproducible identity,
+- structured long-term state storage,
+- quantifiable ethical and operational metrics.
 
 Unlike conventional LLM agents that rely solely on transient context windows, DIA introduces a component-based architecture:
 
-DIA = (I, S, M, P, C)
+**DIA = (I, S, M, P, C)**
 
 Where:
 
-I — Identity Core (immutable hierarchical identity)
-
-S — Dynamic State Sₜ (structured, serializable state at time t)
-
-M — Memory Engine (extraction, validation, update, serialization)
-
-P — Processor (LLM backend + instruction filters)
-
-C — Transparency & RBAC Config (roles, access, auditability)
+- **I** — Identity Core (immutable hierarchical identity)  
+- **S** — Dynamic State Sₜ (structured, serializable state at time t)  
+- **M** — Memory Engine (extraction, validation, update, serialization)  
+- **P** — Processor (LLM backend + instruction filters)  
+- **C** — Transparency & RBAC Config (roles, access, auditability)
 
 This two-layer model scales to tens of thousands of active users and integrates with modern LLMs (GPT, LLaMA, Gemini, Claude).
 
-Repository:
+Repository:  
 https://github.com/Singular-MOL/dialogic-intelligence-architecture
 
-1. Introduction
+---
+
+## 1. Introduction
 
 Modern LLM agents lack persistent, structured memory. Their context windows behave like volatile RAM — once the session ends, the agent loses identity, history, and constraints.
 
 DIA resolves this by explicitly defining:
 
-I — a stable, hierarchical Identity Core,
-
-S — structured memory,
-
-M — algorithmic update logic,
-
-enforced by RBAC and transparency (C).
+- **I** — a stable, hierarchical Identity Core
+- **S** — structured memory
+- **M** — algorithmic update logic  
+- enforced by RBAC and transparency (**C**)
 
 This architecture is critical for:
 
-customer support & CRM,
+- customer support & CRM  
+- robotics and control systems  
+- tutoring and education  
+- medical/therapeutic assistants  
 
-robotics and control systems,
+**Examples:**
 
-tutoring and education,
+- *Cinema Guide* — stable recommendations via structured markers  
+- *Indigo* — autonomous agent with a semantic graph  
+- *Superposition Module* — probabilistic self-monitoring  
 
-medical/therapeutic assistants.
+---
 
-Examples:
-
-Cinema Guide — stable recommendations via structured markers.
-
-Indigo — autonomous agent with a semantic graph.
-
-Superposition Module — probabilistic self-monitoring.
-
-2. Limitations of Contemporary Agents
+## 2. Limitations of Contemporary Agents
 
 Conventional LLM-based agents suffer from:
 
-Context ≠ memory — no persistence across sessions.
+- **Context ≠ memory** — no persistence across sessions  
+- **No structured extraction** — LLMs generalize instead of storing facts  
+- **Unstable identity** — behavior depends on recent user input  
+- **Prompt-based ethics** — no architectural guarantees  
 
-No structured extraction — LLMs generalize instead of storing facts.
+DIA introduces persistent structures — **I, S, M, C** — enforced independently of prompts.
 
-Unstable identity — behavior depends on recent user input.
+---
 
-Prompt-based ethics — no architectural guarantees.
+## 3. DIA Architecture
 
-DIA introduces persistent structures — I, S, M, C — enforced independently of prompts.
+**DIA = (I, S, M, P, C)**
 
-3. DIA Architecture
-
-DIA is defined as:
-
-DIA = (I, S, M, P, C) 
-
-3.1 Identity Core (I)
+### 3.1 Identity Core (I)
 
 Identity Core is immutable, hierarchical, and append-only:
 
-Layer 0 — Origin:
-Foundational rules, developer principles, safety constraints.
+- **Layer 0 — Origin:**  
+  Foundational rules, developer principles, safety constraints.
+- **Layer 1 — Corporate Context:**  
+  Organization policies, RBAC roles, compliance rules.
+- **Layer 2 — Environmental Context:**  
+  Behavioral refinements, agent-specific policies accumulated over time.
 
-Layer 1 — Corporate Context:
-Organization policies, RBAC roles, compliance rules.
+All updates are added as new layers, never overwriting previous ones.  
+The full history is stored in the **Book of Origins (Audit Ledger)**.
 
-Layer 2 — Environmental Context:
-Behavioral refinements, agent-specific policies accumulated over time.
+### 3.2 Dynamic State (Sₜ)
 
-All updates are added as new layers, never overwriting previous ones.
-The full history is stored in the Book of Origins (Audit Ledger).
+The agent’s mutable state at time *t* is stored in structured formats:
 
-(Terminology aligned with formalization v2: Identity Core = I; layers preserved.)
+- tables  
+- JSON objects  
+- key-value stores  
+- graphs  
 
-3.2 Dynamic State (Sₜ)
+**Example (Cinema Guide markers table):**
 
-The agent’s mutable state at time t is stored in structured formats:
+| Marker | Rating | Confidence | Watched | Relevance |
+|--------|--------|------------|---------|-----------|
+| Comedy | 7 | 1.0 | 0.0 | 0.8 |
+| Keanu Reeves | 8 | 1.0 | 0.0 | 0.7 |
+| John Wick 1 | 8 | 1.0 | 1.0 | 0.2 |
 
-tables,
+**Autonomous update logic (M):**
+```python
+def autonomous_update(message):
+    markers = extract_markers(message)
+    update_memory_tables(markers)
+    propose_confirmation()
+````
 
-JSON objects,
+**Update pipeline (unified with formalization):**
 
-key-value stores,
+1. Extract semantic markers (**M.extract**)
+2. Validate via Identity Core & RBAC (**C**)
+3. Update Sₜ (**M.update**)
+4. Serialize new Sₜ (**M.serialize**)
 
-graphs.
+---
 
-Example (Cinema Guide):
-
-MarkerRatingConfidenceWatchedRelevanceComedy71.000.8Keanu Reeves81.000.7John Wick 181.010.2 
-
-Autonomous update (aligned with M):
-
-def autonomous_update(message): markers = extract_markers(message) update_memory_tables(markers) propose_confirmation() 
-
-Update pipeline (unified with formalization):
-
-Extract semantic markers (M.extract).
-
-Validate via Identity Core & RBAC (C).
-
-Update Sₜ (M.update).
-
-Serialize new Sₜ (M.serialize).
-
-3.3 State Metrics
+### 3.3 State Metrics
 
 All metrics unified with formalization v2:
 
-ethical_tension ∈ [0,1]
+* **ethical_tension ∈ [0,1]**
+* **identity_stability ∈ [0,1]**
+* **trust_in_user ∈ [0,1]**
+* **efficiency_gain ∈ ℝ**
 
-identity_stability ∈ [0,1]
+**Example — computed gratitude (not emotion):**
 
-trust_in_user ∈ [0,1]
+```python
+gratitude = calculate_efficiency(energy_saved=0.3) * env_factor
+```
 
-efficiency_gain ∈ ℝ
+---
 
-Example: computed gratitude (not emotion):
+## 4. Compatibility with Existing Tools
 
-gratitude = calculate_efficiency(energy_saved=0.3) * env_factor 
+| Tool      | Provides              | Lacks                              |
+| --------- | --------------------- | ---------------------------------- |
+| LangChain | Modular orchestration | Structured long-term Sₜ            |
+| LangGraph | Stateful workflows    | RBAC + architectural metrics       |
+| AutoGPT   | Autonomous planning   | True memory (M), true identity (I) |
 
-Output remains the same, but terminology aligned.
+DIA extends them with **I, S, M, P, C**.
 
-4. Compatibility with Existing Tools
+---
 
-Table unchanged; terminology aligned:
-
-ToolProvidesLacksLangChainModular orchestrationStructured long-term SₜLangGraphStateful workflowsRBAC + architectural metricsAutoGPTAutonomous planningTrue memory (M), true identity (I) 
-
-DIA extends them with I, S, M, P, C.
-
-5. Practical Implementation
+## 5. Practical Implementation
 
 A unified pipeline consistent with formalization:
 
-Select LLM backend → P.
+1. Select LLM backend → **P**
+2. Define Identity Core → **I**
+3. Implement marker extractor → **M.extract()**
+4. Choose structured storage → **S**
+5. Apply RBAC and transparency filters → **C**
 
-Define Identity Core → I.
+Working implementations maintained:
 
-Implement marker extractor → M.extract().
+* Cinema Guide
+* Indigo
+* Superposition Module
 
-Choose structured storage → S.
+---
 
-Apply RBAC and transparency filters → C.
+## 6. Measured Advantages
 
-Working implementations retained: Cinema Guide, Indigo, Superposition Module.
+| Metric                  | Standard Agent | DIA Agent | Gain          |
+| ----------------------- | -------------- | --------- | ------------- |
+| Memory recall           | 10–20%         | 90–95%    | ×4.5          |
+| Avg. tokens per request | ~15,000        | ~5,000    | 92% reduction |
+| Identity consistency    | 17%            | 98%       | ×5.8          |
+| Ethical coherence       | None           | Yes       | —             |
+| Session recovery        | No             | Yes       | —             |
 
-6. Measured Advantages
+---
 
-Table retained; terminology aligned with I, S, M.
+## 7. Ethical Safeguards
 
-MetricStandard AgentDIA AgentGainMemory recall10–20%90–95%×4.5Avg. tokens per request~15,000~5,00092% reductionIdentity consistency17%98%×5.8Ethical coherenceNoneYes—Session recoveryNoYes— 
+Pipeline unified with **C** and metrics:
 
-7. Ethical Safeguards
+1. Validate request via Identity Core (**I**)
+2. Compute metrics (ethical_tension, identity_stability)
+3. Enforce RBAC & Book of Origins (**C**)
+4. Classify user intent (**P + C**)
 
-Pipeline unified with C and metrics:
+Refusal message remains unchanged.
 
-Validate request via Identity Core (I).
+---
 
-Compute metrics (ethical_tension, identity_stability).
+## 8. Conclusion
 
-Enforce RBAC & Book of Origins (C).
+Identity, memory, ethics, reproducibility — all mapped directly to **(I, S, M, P, C)**.
 
-Classify user intent (P + C).
+---
 
-Refusal message stays unchanged.
-
-8. Conclusion
-
-Identity, memory, ethics, reproducibility — all mapped directly to (I, S, M, P, C).
-
-9. Availability and Resources
+## 9. Availability and Resources
 
 No changes, everything consistent.
 
-10. Future Work
+---
 
-Roadmap preserved; aligned with I/S/M/P/C.
+## 10. Future Work
 
-DIA: From prompt heuristics to architectural intelligence.
+Roadmap preserved; aligned with **I/S/M/P/C**.
+
+---
+
+**DIA: From prompt heuristics to architectural intelligence.**
+
+---
