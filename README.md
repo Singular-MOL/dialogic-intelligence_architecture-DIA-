@@ -168,4 +168,5 @@ We welcome:
 ---
 
 **DIA: Reproducible state. Persistent identity. Enforced integrity.**
-```
+
+---
