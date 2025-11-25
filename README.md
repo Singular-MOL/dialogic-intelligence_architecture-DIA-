@@ -69,7 +69,7 @@ This enables rapid prototyping with **deterministic, reproducible behavior**.
 
 | Document | Type | Local version | DOI |
 |----------|------|---------------|-----|
-| DIA Whitepaper v1.0 | Working paper | [click to view](docs/DIA_WhitePeper_v1(English).md) | [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.17699367) |
+| DIA Whitepaper v1.0 | Working paper | [click to view](docs/DIA_WhitePeper_v1(English).md) | [10.5281/zenodo.17699367](https://doi.org/10.5281/zenodo.17699367) |
 | Methodological Basis | Publication | [click to view](docs/DIA_METHODOLOGICAL_FOUNDATIONS(English).md) | 10.5281/zenodo.XXXXXXX |
 | Technical Formalization | Publication | [click to view](docs/DIA_Formalization(English).md) | 10.5281/zenodo.XXXXXXX |
 | Theoretical Foundation | Working paper | [click to view](https://github.com/Singular-MOL/mol-foundation/blob/main/docs/MOL_Whitepaper_v1(English).md) | [10.5281/zenodo.17445023](https://doi.org/10.5281/zenodo.17445023)|
